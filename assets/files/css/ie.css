@@ -1,0 +1,24 @@
+input.input-submit {
+    cursor:hand;
+}
+form.quickform fieldset {
+    position: relative;
+    padding-top: 15px;
+}
+form.quickform legend {
+    position: absolute;
+    top: -11px;
+    left: 15px;
+}
+#story div.node-path ul li a {
+	display: inline-block;
+	white-space: nowrap;
+	width: 1px;
+}
+#story div.node-path ul {
+	padding-bottom: 0;
+	margin-bottom: -1px;
+}
+html #story div.dbnav div.node-path ul li a {
+	padding: 0;
+}

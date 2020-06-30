@@ -1,0 +1,24 @@
+{application, asim,
+ [
+  {description, "asim"},
+  {vsn, "1"},
+  {modules, [
+	  asim_app,
+	  asim_sup,
+      asim_lib
+      ]},
+  {mod,{asim_app,[]}},
+  {registered, []},
+  {applications, [
+      kernel,
+      stdlib,
+	  mnesia,
+	  cowboy,
+	  jiffy,
+	  sgte,
+	  pooler
+                 ]},
+
+  {env, []}
+
+ ]}.

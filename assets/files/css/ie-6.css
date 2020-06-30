@@ -1,0 +1,16 @@
+body{
+	text-align:center;
+}
+#main {
+	margin-left: 0px;
+	margin-right: 0px;
+	text-align: left;
+}
+div#toolbar {
+    position: absolute;
+    top:expression(eval(document.compatMode && document.compatMode==\'CSS1Compat\') ?
+    documentElement.scrollTop
+    +(documentElement.clientHeight-this.clientHeight)
+    : document.body.scrollTop
+    +(document.body.clientHeight-this.clientHeight))
+}

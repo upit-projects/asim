@@ -1,0 +1,24 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    border:none;
+}
+.expandfix:after {
+    content: " ";
+    display: block;
+    clear: both;
+	height: 1px;
+}
+.fakelink {
+    cursor:pointer;
+}
+.fakelink:hover {
+    text-decoration:underline;
+}
+.hidetext {
+    display:block;
+    text-indent: -3000px;
+    overflow: hidden;
+    outline: none;
+    white-space: nowrap;
+}

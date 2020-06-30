@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <title>$title$</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="language" content="ro" />
+    <link rel="icon" type="image/png" sizes="32x32" href="$assets_url$/favicon-32x32.png">
+
+    <link href="$assets_url$/css/base.css" rel="stylesheet" type="text/css" media="screen" />
+    <!--[if IE]>
+    <link href="$assets_url$/css/ie.css" rel="stylesheet" type="text/css" media="screen" />
+    <![endif]-->
+    <link href="$assets_url$/js/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <link href="$assets_url$/js/jquery-ui-1.12.1/jquery-ui.theme.css" rel="stylesheet" type="text/css" />
+    <link href="$assets_url$/js/jquery-ui-1.12.1/jquery-ui.structure.css" rel="stylesheet" type="text/css" />
+    <link href="$assets_url$/js/jqplot/jquery.jqplot.css" rel="stylesheet" type="text/css" />
+    <link href="$assets_url$/js/jqueryuitimepicker/jquery.ui.timepicker.css" rel="stylesheet" type="text/css" />
+    <link href="$assets_url$/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="$assets_url$/css/flags.css" rel="stylesheet" type="text/css" />
+    <link href="$assets_url$/css/screen.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="$assets_url$/css/print.css" rel="stylesheet" type="text/css" media="print" />
+    <!--[if lte IE 6]>
+    <link href="$assets_url$/css/lte-ie-6.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+
+    <style type="text/css">
+        $css$
+    </style>
+
+    <script type="text/javascript" src="$assets_url$/js/jquery/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="$assets_url$/js/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="$assets_url$/js/jquerycanvasjs/jquery.canvasjs.min.js"></script>
+    <script type="text/javascript" src="$assets_url$/js/jqueryblockui/jquery.blockui-2.7.0.js"></script>
+    <script type="text/javascript" src="$assets_url$/js/jquerysuperfish/superfish.js"></script>
+    <script type="text/javascript" src="$assets_url$/js/jqueryuitimepicker/jquery.ui.timepicker.js"></script>
+    <script type="text/javascript" src="$assets_url$/js/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="$assets_url$/js/script.js"></script>
+
+</head>
+<body>
+<div id="main">
+    <div id="wrapper">
+
+        <div id="banner">
+            <div id="banner-container">
+                <div id="ajax-msg"><div id="ajax-msg-content"></div></div>
+            </div>
+        </div>
+
+        <!-- Start of menu-toolbar -->
+        <div id="menu-toolbar">
+            <ul id="menu">
+                <li class="menu-home">
+                    <a href="$url$"><span class="icon"></span>Home</a>
+                </li>
+                <li>
+                    <a href="#">Simulations templates</a>
+                    <ul>
+                        <li><a href="$url$/maps/index">Edit simulation templates</a></li>
+                        <li><a href="$url$/tanks/index">Edit redistribution of the economic growth methods</a></li>
+						<li><a href="$url$/tanks/index">Edit genetic algorithm fitness functions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Simulations</a>
+                    <ul>
+                        <li><a href="$url$/sim/create">Create new simulations</a></li>
+                        <li><a href="$url$/sim/index">Display running simulations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="$url$/results/index">Results</a>
+                </li>
+                <li>
+                    <a href="$assets_url$/documentation/asim.pdf" target="_blank">Documentation</a>
+                </li>
+            </ul>
+        </div>
+        <!-- End of menu -->
+
+
+        <!-- Begin story -->
+        <div id="story">
+            <div id="story-container">
+                <div id="messages">$messages$</div>
+
+$story$
+
+            </div>
+        </div>
+        <!-- End story -->
+
+</div>
+</div>
+
+<!-- Start of toolbar -->
+<div id="toolbar">
+    <div id="toolbar-container">
+
+        <div id="toolbar-buttons">
+            $toolbar$
+        </div>
+
+        <div id="toolbar-sysinfo">
+            <div id="toolbar-sysinfo-ip">IP: $remote_ip$ Port: $remote_port$</div>
+            <div id="toolbar-sysinfo-gt">Page generated in $page_generation_time$ seconds</div>
+        </div>
+
+    </div>
+</div>
+<!-- End of toolbar -->
+
+<script language="JavaScript" type="text/javascript">
+<!--
+
+$js$
+
+$(document).ready(function() {
+
+$(".jsonly").show();
+$("input[name='jsenabled']").val("1");
+$("#menu").superfish();
+$(".xjqueryui-datepicker").datepicker({changeMonth: true, changeYear: true, dateFormat: "yy/m/d"});
+$(".xjqueryui-timepicker").timepicker();
+
+$js_ready$
+
+});
+//-->
+</script>
+
+</body>
+</html>
