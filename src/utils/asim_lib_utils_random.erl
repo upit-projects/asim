@@ -9,6 +9,7 @@
 
 %% API
 -export([integer_interval/2]).
+-export([true_or_false/0]).
 
 %% Return a random integer in the specified interval
 integer_interval(Min, Max) when
@@ -17,3 +18,6 @@ integer_interval(Min, Max) when
   Min =< Max ->
 
   Min + erlang:trunc(rand:uniform() * ((Max - Min) + 1)).
+
+%% Returns a random true or false boolean
+true_or_false() -> (rand:uniform(16) > 8).

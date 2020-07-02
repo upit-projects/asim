@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f375a9c-e9de-4f74-9d7a-fcb29833a3ef" name="Default Changelist" comment="" />
+    <list default="true" id="1f375a9c-e9de-4f74-9d7a-fcb29833a3ef" name="Default Changelist" comment="First version of the simulation">
+      <change afterPath="$PROJECT_DIR$/doc/doc.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/doc/doc.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ext/rules/asim_ext_rules_create.erl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ext/rules/asim_ext_rules_deletemany.erl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ext/rules/asim_ext_rules_index.erl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ext/rules/asim_ext_rules_update.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/sys.config.src" beforeDir="false" afterPath="$PROJECT_DIR$/config/sys.config.src" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/asim.hrl" beforeDir="false" afterPath="$PROJECT_DIR$/include/asim.hrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/asim_lib_genetic_algorithm.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/asim_lib_genetic_algorithm.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/asim_srv_sim.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/asim_srv_sim.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/asim_srv_sim_manager.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/asim_srv_sim_manager.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ext/results/asim_ext_results_deleteall.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/ext/results/asim_ext_results_deleteall.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/asim_lib_utils_random.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/asim_lib_utils_random.erl" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,7 +59,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/_build/default/deps/sgte" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
@@ -37,7 +71,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../amber/old/asim/asim" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -68,15 +102,39 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="First version of the simulation" />
+    <option name="LAST_COMMIT_MESSAGE" value="First version of the simulation" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="264" key="FileChooserDialogImpl" timestamp="1593466941941">
+    <state x="740" y="264" key="FileChooserDialogImpl" timestamp="1593702693916">
       <screen x="0" y="0" width="1920" height="1019" />
     </state>
-    <state x="740" y="264" key="FileChooserDialogImpl/0.0.1920.1019@0.0.1920.1019" timestamp="1593466941941" />
+    <state x="740" y="264" key="FileChooserDialogImpl/0.0.1920.1019@0.0.1920.1019" timestamp="1593702693916" />
     <state x="461" y="154" key="SettingsEditor" timestamp="1593476532453">
       <screen x="0" y="0" width="1920" height="1019" />
     </state>
     <state x="461" y="154" key="SettingsEditor/0.0.1920.1019@0.0.1920.1019" timestamp="1593476532453" />
+    <state x="566" y="120" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1593688385807">
+      <screen x="0" y="0" width="1920" height="1019" />
+    </state>
+    <state x="566" y="120" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/3000.0.1920.1019/0.0.1920.1019/1920.0.1080.2018@0.0.1920.1019" timestamp="1593688385807" />
+    <state x="623" y="219" width="672" height="678" key="search.everywhere.popup" timestamp="1593692531548">
+      <screen x="0" y="0" width="1920" height="1019" />
+    </state>
+    <state x="623" y="219" width="672" height="678" key="search.everywhere.popup/0.0.1920.1019@0.0.1920.1019" timestamp="1593692531548" />
+    <state x="623" y="219" width="672" height="678" key="search.everywhere.popup/3000.0.1920.1019/0.0.1920.1019/1920.0.1080.2018@0.0.1920.1019" timestamp="1593610008014" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

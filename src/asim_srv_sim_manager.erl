@@ -82,16 +82,12 @@ init(_Args) ->
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% Handle create simulation call
-handle_call({create, #asim_simulation_specs{
-	how_many    = HowMany,
-	sim_id = SimId,
-	sim_template_id = SimTemplate
-}},
+handle_call({create, SimulationRules = #asim_simulation_rules{}},
 	{_CallerPid, _},
 	State = #asim_srv_sim_manager_state{}) ->
 
 	%% Create al requested simulations one by one
-	NewState = handle_call_create(HowMany, SimId, SimTemplate, State),
+	NewState = handle_call_create([SimulationRules], State),
 
 	%% Reply to caller
 	{reply, ok, NewState};
@@ -204,15 +200,15 @@ code_change(_OldVsn, State, _Extra) -> {ok, State}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% @doc Creates a new simulation
-handle_call_create(HowMany, SimId, SimTemplate, State = #asim_srv_sim_manager_state{
+handle_call_create([SimulationRules | SimulationRulesTail], State = #asim_srv_sim_manager_state{
 	simulations = Simulations
-}) when HowMany > 0 ->
+}) ->
 
 	%% Create/get a free worker from the workers pool
 	SimWorker = pooler:take_member(asim_sim_pool),
 
 	%% Give worker simulation parameters
-	case gen_server:call(SimWorker, {start, SimId, SimTemplate}, infinity) of
+	case gen_server:call(SimWorker, {start, SimulationRules}, infinity) of
 		ok ->
 
 			%% Add simulation worker to simulations list
@@ -222,16 +218,16 @@ handle_call_create(HowMany, SimId, SimTemplate, State = #asim_srv_sim_manager_st
 			NewState = State#asim_srv_sim_manager_state{simulations = NewSimulations},
 
 			%% Create the next simulation
-			handle_call_create(HowMany-1, SimId, SimTemplate, NewState);
+			handle_call_create(SimulationRulesTail, NewState);
 
 		_ ->
 
 			%% Ignore failure (we should implement some failure messages to
 			%% handle this situation)
-			handle_call_create(HowMany-1, SimId, SimTemplate, State)
+			handle_call_create(SimulationRulesTail, State)
 
 	end;
-handle_call_create(_HowMany, _SimId, _SimTemplate, State) -> State.
+handle_call_create(_SimulationRules, State) -> State.
 
 
 %% @doc Delete the specified simulation because the simulation ended

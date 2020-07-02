@@ -3,7 +3,8 @@
     {node_public_ip, <<"5.2.149.252">>},
     {protocol, <<"http">>},
     {host, <<"5.2.149.252">>},
-    {http_port, 5012}
+    {http_port, 5012},
+    {reset_database, true}
   ]},
   {mnesia, [
     {dir,"/home/madalin/asim/mnesia"}

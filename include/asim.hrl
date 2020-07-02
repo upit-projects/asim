@@ -36,24 +36,72 @@
 %% Record holding a simulation player
 -record(asim_player, {
 	genome = undefined :: undefined | list(),
-	taxes = undefined :: undefined | integer(),
-	fitness = undefined :: undefined | float()
+	production = 0 :: float(),
+	capital = 0 :: float(),
+	taxes = 0 :: float(),
+	fitness = 0 :: float()
 }).
 
 %% Record holding a new bunch of simulations (2 or more) specifications
 -record(asim_simulation_specs, {
-
 	how_many,
 	sim_id,
 	sim_template_id
-
 }).
 
 %% Record holding simulation rules
 -record(asim_simulation_rules, {
+
+	%% Simulation rule id
 	id = undefined,
+
+	%% Simulation rule name
+	name = <<"">>,
+
+	%% Stop cycle (use undefined for running the simulation forever until stopped manually by the user)
+	stop_cycle = 100,
+
+	%% Population count
 	population_count = 100,
-	genome_size = 8
+
+	%% Genome size
+	genome_size = 8,
+
+	%% Selection count (from population count)
+	selection_count = 50,
+
+	%% Fitness function type
+	fitness_function = <<"profit_oriented">>,
+
+	%% Profit redistribution function
+	profit_redistribution_function = <<"meritocracy">>,
+
+	%% C – is the cost of the simulation cycle
+	%% (a real number in between 0 and 1 interval)
+	c_cost_of_the_simulation = 0.2,
+
+	%% P – is the capital profit multiplier
+	%% (a real number in between 0 and 1 interval)
+	p_capital_multiplier = 0.1,
+
+  %% X – is the taxation percent from the total amount of energy produced by a player into a simulation cycle
+	%% (a real number in between 0 and 1 interval).,
+  x_taxation_percent = 0.18,
+
+	%% M – is a constant representing the simulation energy obtained by a miner gene
+	m_gene_miner_energy = 16,
+
+	%% T – is a constant representing the simulation energy obtained by a trader gene
+	t_gene_trader_energy = 4,
+
+	%% H – is a constant representing the ability to hoard of a hoarder gene
+	h_gene_hoarder_ability = 0.1,
+
+	%% Z – is a constant representing the ability to steal of a thief gene
+	z_gene_thief_ability = 0.1,
+
+	time_created
+
 }).
 
 %% Record holding simulation data
@@ -74,18 +122,24 @@
 	%% the maximum taxes amount payed by a single player for the current simulation step
 	max_player_taxes = 0,
 
-	%% Fitness function type
-	fitness_function = profit_oriented,
+  %% G – is the total amount of energy produced by all players before taxes. G is a quite a similar simplification of a country gross domestic product (GDP).
+	g_energy_produced = 0,
 
-	%% Selection count (from population count)
-	selection_count = 50,
+  %% B - is the total amount of the taxes collected from all players activities. This is like a country revenue or budget but of course in a more simplified form.
+	b_taxes_collected = 0,
 
-	%% Simulation start time
+  %% Simulation start time
 	time_started,
 
 	%% Simulation end time
 	time_ended
 
+}).
+
+-record(asim_simulation_step_info, {
+	max_player_taxes,
+	g_energy_produced,
+	b_taxes_collected
 }).
 
 %% ETS memory tables
@@ -113,9 +167,19 @@
 %% We can easily add a new table to the simulation by appending the
 %% MNESIA table to this list
 -define(ASIM_TABLES_MNESIA, [
+	{asim_simulation_rules, [
+		{disc_copies, [erlang:node()]},
+		{type, set},
+		{attributes, record_info(fields, asim_simulation_rules)}
+	]},
 	{asim_simulation, [
 		{disc_copies, [erlang:node()]},
 		{type, set},
+		{attributes, record_info(fields, asim_simulation)}
+	]},
+	{asim_simulation_history, [
+		{disc_copies, [erlang:node()]},
+		{type, bag},
 		{attributes, record_info(fields, asim_simulation)}
 	]}
 ]).

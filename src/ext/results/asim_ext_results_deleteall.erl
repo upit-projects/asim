@@ -1,7 +1,6 @@
 %%%-------------------------------------------------------------------
 %%% @author Madalin Grigore-Enescu <madalingrigoreenescu@gmail.com>
 %%% @doc
-%%%
 %%% @end
 %%%-------------------------------------------------------------------
 -module(asim_ext_results_deleteall).
