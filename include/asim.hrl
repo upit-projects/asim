@@ -136,10 +136,30 @@
 
 }).
 
--record(asim_simulation_step_info, {
-	max_player_taxes,
-	g_energy_produced,
-	b_taxes_collected
+%% Record holding simulation history data
+-record(asim_simulation_history, {
+
+	%% Simulation unique ID
+	id,
+
+	%% Simulation cycle count
+	cycle = 0,
+
+	%% Holds population
+	population = undefined,
+
+	%% the maximum taxes amount payed by a single player for the current simulation step
+	max_player_taxes = 0,
+
+	%% G – is the total amount of energy produced by all players before taxes. G is a quite a similar simplification of a country gross domestic product (GDP).
+	g_energy_produced = 0,
+
+	%% B - is the total amount of the taxes collected from all players activities. This is like a country revenue or budget but of course in a more simplified form.
+	b_taxes_collected = 0,
+
+	%% History info time
+	time_created
+
 }).
 
 %% ETS memory tables
@@ -180,7 +200,7 @@
 	{asim_simulation_history, [
 		{disc_copies, [erlang:node()]},
 		{type, bag},
-		{attributes, record_info(fields, asim_simulation)}
+		{attributes, record_info(fields, asim_simulation_history)}
 	]}
 ]).
 

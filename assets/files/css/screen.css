@@ -1234,3 +1234,15 @@ body>div#toolbar{
     width: 16px;
     height: 16px;
 }
+
+div.charts-wrapper {
+	min-height: 400px;
+	padding: 5px 0;
+	position: relative;
+}
+
+div.charts-wrapper canvas {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}

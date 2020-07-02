@@ -20,22 +20,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f375a9c-e9de-4f74-9d7a-fcb29833a3ef" name="Default Changelist" comment="First version of the simulation">
-      <change afterPath="$PROJECT_DIR$/doc/doc.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/doc/doc.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ext/rules/asim_ext_rules_create.erl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ext/rules/asim_ext_rules_deletemany.erl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ext/rules/asim_ext_rules_index.erl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ext/rules/asim_ext_rules_update.erl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ext/charts/asim_ext_charts_index.erl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ext/results/asim_ext_results_deletemany.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/files/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/files/css/screen.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/templates/v1/html/home/index-story.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/templates/v1/html/home/index-story.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/templates/v1/html/page.html" beforeDir="false" afterPath="$PROJECT_DIR$/assets/templates/v1/html/page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/templates/v1/html/sim/index-page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/templates/v1/html/sim/index-story.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/sys.config.src" beforeDir="false" afterPath="$PROJECT_DIR$/config/sys.config.src" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/asim.hrl" beforeDir="false" afterPath="$PROJECT_DIR$/include/asim.hrl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rebar3" beforeDir="false" afterPath="$PROJECT_DIR$/rebar3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/asim_lib_genetic_algorithm.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/asim_lib_genetic_algorithm.erl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/asim_srv_sim.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/asim_srv_sim.erl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/asim_srv_sim_manager.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/asim_srv_sim_manager.erl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ext/results/asim_ext_results_deleteall.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/ext/results/asim_ext_results_deleteall.erl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/asim_lib_utils_random.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/asim_lib_utils_random.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ext/results/asim_ext_results_index.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/ext/results/asim_ext_results_index.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ext/rules/asim_ext_rules_index.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/ext/rules/asim_ext_rules_index.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ext/sim/asim_ext_sim_clear.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/ext/sim/asim_ext_sim_deletemany.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ext/sim/asim_ext_sim_create.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/ext/sim/asim_ext_sim_create.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ext/sim/asim_ext_sim_index.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/ext/sim/asim_ext_sim_index.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ext/sim/asim_ext_sim_status.erl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/asim_lib_utils_type_conv.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/asim_lib_utils_type_conv.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web/asim_lib_web_form.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/asim_lib_web_form.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web/asim_lib_web_table_nav.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/asim_lib_web_table_nav.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/web/asim_lib_web_table_nav_renderer.erl" beforeDir="false" afterPath="$PROJECT_DIR$/src/web/asim_lib_web_table_nav_renderer.erl" afterDir="false" />
     </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/.rebar3/" />
+    <ignored path="$PROJECT_DIR$/_build/" />
+    <ignored path="$PROJECT_DIR$/ebin/" />
+    <ignored path="$PROJECT_DIR$/.eunit/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,44 +66,400 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ext/sim/asim_ext_sim_index.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1075">
+              <caret line="43" column="29" lean-forward="true" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ext/rules/asim_ext_rules_index.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1175">
+              <caret line="47" column="16" selection-start-line="40" selection-start-column="12" selection-end-line="49" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ext/sim/asim_ext_sim_deletemany.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ext/charts/asim_ext_charts_index.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="750">
+              <caret line="48" column="95" selection-start-line="48" selection-start-column="95" selection-end-line="48" selection-end-column="95" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/asim_lib_utils_type_conv.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="23" column="78" lean-forward="true" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ext/rules/asim_ext_rules_update.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="558">
+              <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/web/asim_lib_web_form.erl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="392">
+              <caret line="609" column="124" selection-start-line="609" selection-start-column="124" selection-end-line="609" selection-end-column="124" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_build/default/rel/asim/assets/templates/v1/html/charts/index-story.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="25">
+              <caret line="1" column="14" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Erlang Header" />
         <option value="Erlang Module" />
+        <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>render_data_row_convert_to_proplist</find>
+      <find>custom</find>
+      <find>profit_oriented</find>
+      <find>&lt;&lt;&quot;profit_oriented&quot;&gt;&gt;</find>
+      <find>from_ability_to_needs</find>
+      <find>build_graphs</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>build_charts</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/assets/templates/v1/html/home/index-story.html" />
+        <option value="$PROJECT_DIR$/src/ext/rules/asim_ext_rules_index.erl" />
+        <option value="$PROJECT_DIR$/src/ext/sim/asim_ext_sim_create.erl" />
+        <option value="$PROJECT_DIR$/assets/templates/v1/html/page.html" />
+        <option value="$PROJECT_DIR$/include/asim.hrl" />
+        <option value="$PROJECT_DIR$/src/ext/results/asim_ext_results_deletemany.erl" />
+        <option value="$PROJECT_DIR$/src/ext/results/asim_ext_results_index.erl" />
+        <option value="$PROJECT_DIR$/src/web/asim_lib_web_table_nav.erl" />
+        <option value="$PROJECT_DIR$/config/sys.config.src" />
+        <option value="$PROJECT_DIR$/src/web/asim_lib_web_table_nav_renderer.erl" />
+        <option value="$PROJECT_DIR$/src/asim_srv_sim.erl" />
+        <option value="$PROJECT_DIR$/src/ext/sim/asim_ext_sim_deletemany.erl" />
+        <option value="$PROJECT_DIR$/src/asim_lib_genetic_algorithm.erl" />
+        <option value="$PROJECT_DIR$/_build/default/rel/asim/assets/templates/v1/html/page.html" />
+        <option value="$PROJECT_DIR$/src/ext/sim/asim_ext_sim_graphs.erl" />
+        <option value="$PROJECT_DIR$/src/ext/sim/asim_ext_sim_index.erl" />
+        <option value="$PROJECT_DIR$/assets/files/css/screen.css" />
+        <option value="$PROJECT_DIR$/_build/default/rel/asim/assets/files/css/screen.css" />
+        <option value="$PROJECT_DIR$/_build/default/rel/asim/assets/templates/v1/html/charts/index-story.html" />
+        <option value="$PROJECT_DIR$/src/utils/asim_lib_utils_type_conv.erl" />
+        <option value="$PROJECT_DIR$/src/web/asim_lib_web_form.erl" />
+        <option value="$PROJECT_DIR$/src/ext/charts/asim_ext_charts_index.erl" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1918" />
+    <option name="height" value="1042" />
+  </component>
   <component name="ProjectId" id="1VC289CbMUuzVY5oMuuuBaSIFkz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="_build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="_build" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="_build" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="rel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="_build" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="rel" type="462c0819:PsiDirectoryNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="_build" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="rel" type="462c0819:PsiDirectoryNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="_build" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="rel" type="462c0819:PsiDirectoryNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="_build" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="rel" type="462c0819:PsiDirectoryNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="_build" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="rel" type="462c0819:PsiDirectoryNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="_build" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="rel" type="462c0819:PsiDirectoryNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="v1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="_build" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="rel" type="462c0819:PsiDirectoryNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="v1" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="_build" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+              <item name="rel" type="462c0819:PsiDirectoryNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="v1" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+              <item name="charts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="files" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="v1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="v1" type="462c0819:PsiDirectoryNode" />
+              <item name="html" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ext" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ext" type="462c0819:PsiDirectoryNode" />
+              <item name="charts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ext" type="462c0819:PsiDirectoryNode" />
+              <item name="results" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ext" type="462c0819:PsiDirectoryNode" />
+              <item name="rules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ext" type="462c0819:PsiDirectoryNode" />
+              <item name="sim" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="asim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="asim" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../amber/old/asim/asim" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="ignore_missing_gitignore" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ext/sim" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/ext/charts" />
       <recent name="$PROJECT_DIR$/src/web/ext" />
       <recent name="$PROJECT_DIR$/src/http" />
       <recent name="$PROJECT_DIR$/src/web" />
       <recent name="$PROJECT_DIR$/src/utils" />
-      <recent name="$PROJECT_DIR$/src/webcms" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/ext/sim" />
+      <recent name="$PROJECT_DIR$/_build/default/rel/asim/assets" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -102,12 +474,64 @@
     </task>
     <servers />
   </component>
+  <component name="ToolWindowManager">
+    <frame x="-4" y="0" width="3848" height="2079" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2529349" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49973318" visible="true" weight="0.3297062" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5002668" side_tool="true" weight="0.3297062" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+    </layout>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>
@@ -146,6 +570,260 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/assets/templates/v1/html/story.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_build/default/rel/asim/assets/templates/v1/html/sim/index-page.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asim_srv_sim_manager.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/web/asim_lib_web_url.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="92" column="1" lean-forward="true" selection-start-line="92" selection-end-line="92" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/web/asim_lib_web_router.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4617" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ext/sim/asim_ext_sim_status.erl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ext/sim/asim_ext_sim_create.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1000">
+          <caret line="40" column="55" selection-start-line="40" selection-start-column="55" selection-end-line="40" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/templates/v1/html/sim/index-story.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/templates/v1/html/sim/index-page.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/templates/v1/html/home/index-story.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/templates/v1/html/page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="68" column="14" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/asim_lib_utils_random.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ext/rules/asim_ext_rules_deletemany.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="29" column="45" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ext/results/asim_ext_results_deleteall.erl">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/sys.config.src">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/web/asim_lib_web_table_nav_renderer.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="53" column="100" selection-start-line="53" selection-start-column="97" selection-end-line="53" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ext/results/asim_ext_results_index.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ext/results/asim_ext_results_deletemany.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="17" lean-forward="true" selection-start-line="10" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/web/asim_lib_web_table_nav.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="238" column="47" lean-forward="true" selection-start-line="238" selection-start-column="47" selection-end-line="238" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/web/asim_lib_web_ob.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="114" selection-start-line="114" selection-end-line="114" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_build/default/rel/asim/assets/templates/v1/html/home/index-story.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_build/default/rel/asim/assets/templates/v1/html/page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_build/default/rel/asim/assets/templates/v1/html/story.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="4" lean-forward="true" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asim_lib_genetic_algorithm.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1194">
+          <caret line="101" column="4" selection-start-line="101" selection-start-column="4" selection-end-line="101" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/asim.hrl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="150" column="44" selection-start-line="150" selection-start-column="44" selection-end-line="150" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ext/rules/asim_ext_rules_index.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1175">
+          <caret line="47" column="16" selection-start-line="40" selection-start-column="12" selection-end-line="49" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ext/sim/asim_ext_sim_index.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1075">
+          <caret line="43" column="29" lean-forward="true" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/asim_srv_sim.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8425">
+          <caret line="337" column="48" lean-forward="true" selection-start-line="337" selection-start-column="48" selection-end-line="337" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_build/default/rel/asim/assets/files/css/screen.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1677">
+          <caret line="1249" selection-start-line="1249" selection-end-line="1249" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/files/css/screen.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1452">
+          <caret line="1239" column="14" lean-forward="true" selection-start-line="1236" selection-end-line="1248" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/WORK/kinkya/server/qnets/build/erlang/21.3/lib/erts-10.3/src/erlang.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="849" selection-start-line="849" selection-end-line="849" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ext/rules/asim_ext_rules_update.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="54" column="49" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/web/asim_lib_web_exceptions_handler.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="927">
+          <caret line="142" column="45" selection-start-line="142" selection-start-column="45" selection-end-line="142" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ext/rules/asim_ext_rules_create.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1108">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/asim_lib_utils_type_conv.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="23" column="78" lean-forward="true" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/web/asim_lib_web_form.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="609" column="124" selection-start-line="609" selection-start-column="124" selection-end-line="609" selection-end-column="124" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ext/sim/asim_ext_sim_deletemany.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_build/default/rel/asim/assets/templates/v1/html/charts/index-story.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ext/charts/asim_ext_charts_index.erl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="48" column="95" selection-start-line="48" selection-start-column="95" selection-end-line="48" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>

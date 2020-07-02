@@ -607,7 +607,7 @@ add_story_input_data_get_binary(Value) when erlang:is_list(Value) ->
 		_ -> erlang:list_to_binary(io_lib:format("~p", [Value]))
 	end;
 add_story_input_data_get_binary(Value) when erlang:is_integer(Value) -> erlang:integer_to_binary(Value);
-add_story_input_data_get_binary(Value) when erlang:is_float(Value) -> erlang:float_to_binary(Value);
+add_story_input_data_get_binary(Value) when erlang:is_float(Value) -> erlang:float_to_binary(Value, [{decimals, 6}, compact]);
 add_story_input_data_get_binary(Value) -> erlang:list_to_binary(io_lib:format("~p", [Value])).
 
 add_story_input_data_get_binary_is_string([]) -> true;

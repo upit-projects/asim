@@ -4,7 +4,7 @@
     {protocol, <<"http">>},
     {host, <<"5.2.149.252">>},
     {http_port, 5012},
-    {reset_database, true}
+    {reset_database, false}
   ]},
   {mnesia, [
     {dir,"/home/madalin/asim/mnesia"}

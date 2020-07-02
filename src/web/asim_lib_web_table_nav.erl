@@ -230,6 +230,8 @@ render_data_row_columns([{Key, Value}|T], Row, RowNumber, Ob, Nav) ->
 	render_data_row_columns(T, Row, RowNumber, ColumnOb, Nav);
 render_data_row_columns([], _Row, _RowNumber, Ob, _Nav) -> Ob.
 
+render_data_row_convert_to_proplist(Row, asim_simulation_history) -> lists:zip(record_info(fields, asim_simulation_history), tl(tuple_to_list(Row)));
+render_data_row_convert_to_proplist(Row, asim_simulation_rules) -> lists:zip(record_info(fields, asim_simulation_rules), tl(tuple_to_list(Row)));
 render_data_row_convert_to_proplist(Row, asim_simulation) -> lists:zip(record_info(fields, asim_simulation), tl(tuple_to_list(Row))).
 
 %%=============================================

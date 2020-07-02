@@ -16,20 +16,30 @@
 %% @doc Handle home
 handle(State = #asim_state{ob = Ob}) ->
 
-	Transaction = fun() -> mnesia:select(asim_simulation,[{'_',[],['$_']}]) end,
-	Simulations = mnesia:activity(transaction, Transaction),
-	SimulationsOb = asim_lib_web_ob:add_story(asim_ext_sim_status:get_html(Simulations), Ob),
+	%% Create table navigator
+	{TableNavigator, NewState} = asim_lib_web_table_nav:create([
+		{table, asim_simulation_history},
+		{record, asim_simulation_history},
+		{columns, [
+			id,
+			cycle,
+			population,
+			max_player_taxes,
+			g_energy_produced,
+			b_taxes_collected,
+			time_created]},
+		{key, id},
+		{operations, [
+			{delete_many, []
+			}
+		]}
+	], State),
 
-	%% Add custom operations to database navigator
-	NewOb = asim_lib_web_ob:add_toolbar_buttons([
+	%% Render navigator to output buffer
+	{NewOb, _} = asim_lib_web_table_nav:render(Ob, TableNavigator),
 
-		#asim_ob_toolbar_button{
-			img    = asim_lib_web_url:get_asset_url(<<"/images/oxygen/64x64/places/user-trash.png">>),
-			href   = asim_lib_web_url:get(<<"results">>, <<"deleteall">>),
-			name   = <<"Delete all results from DB">>
-		}
 
-	], SimulationsOb),
+	%% Render output buffer and reply
+	asim_lib_web_ob:render_and_reply(NewState#asim_state{ob = NewOb}).
 
-	asim_lib_web_ob:render_and_reply(State#asim_state{ob = NewOb}).
 

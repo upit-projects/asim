@@ -15,7 +15,7 @@
 %% @doc Handle home
 handle(State = #asim_state{ob = Ob}) ->
 
-	%% Create table tanks navigator
+	%% Create table navigator
 	{TableNavigator, NewState} = asim_lib_web_table_nav:create([
 		{table, asim_simulation_rules},
 		{record, asim_simulation_rules},
@@ -36,7 +36,22 @@ handle(State = #asim_state{ob = Ob}) ->
 			h_gene_hoarder_ability,
 			z_gene_thief_ability,
 			time_created]},
-		{key, id}
+		{key, id},
+		{operations, [
+			{custom, [
+				{button, #asim_ob_toolbar_button{
+					img                 = asim_lib_web_url:get_asset_url(<<"/images/oxygen/64x64/actions/system-run.png">>),
+					name                = <<"Start simulation">>
+				}},
+				{selection, 2},
+				{action_extension, <<"sim">>},
+				{action_module, <<"create">>},
+				{action_operation, <<"default">>}
+			]},
+			{create, []},
+			{update, []},
+			{delete_many, []}
+		]}
 	], State),
 
 	%% Render navigator to output buffer

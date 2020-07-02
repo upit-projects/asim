@@ -69,7 +69,7 @@ cycle_population_fitness(FitnessFunction, Population, MaxPlayerTaxes) ->
   cycle_population_fitness(FitnessFunction, Population, MaxPlayerTaxes, []).
 
 %% Profit oriented fitness function
-cycle_population_fitness(<<"profit_oriented">>, [Head = #asim_player{taxes = T}|Tail], M, Acum) when T < 1; M < 1 ->
+cycle_population_fitness(<<"profit_oriented">>, [Head = #asim_player{taxes = T}|Tail], M, Acum) when T =:= 0.0; M =:= 0.0 ->
   Fitness = 0.0,
   cycle_population_fitness(<<"profit_oriented">>, Tail, M, [Head#asim_player{fitness = Fitness}| Acum]);
 cycle_population_fitness(<<"profit_oriented">>, [Head = #asim_player{taxes = T}|Tail], M, Acum) ->
@@ -77,7 +77,7 @@ cycle_population_fitness(<<"profit_oriented">>, [Head = #asim_player{taxes = T}|
   cycle_population_fitness(<<"profit_oriented">>, Tail, M, [Head#asim_player{fitness = Fitness}| Acum]);
 
 %% Unfair fitness function
-cycle_population_fitness(<<"unfair">>, [Head = #asim_player{taxes = T}|Tail], M, Acum) when T < 1; M < 1 ->
+cycle_population_fitness(<<"unfair">>, [Head = #asim_player{taxes = T}|Tail], M, Acum) when T =:= 0.0; M =:= 0.0 ->
   Fitness = 1.0,
   cycle_population_fitness(<<"unfair">>, Tail, M, [Head#asim_player{fitness = Fitness}| Acum]);
 cycle_population_fitness(<<"unfair">>, [Head = #asim_player{taxes = T}|Tail], M, Acum) ->
@@ -85,9 +85,9 @@ cycle_population_fitness(<<"unfair">>, [Head = #asim_player{taxes = T}|Tail], M,
   cycle_population_fitness(<<"unfair">>, Tail, M, [Head#asim_player{fitness = Fitness}| Acum]);
 
 %% Neutral fitness function
-cycle_population_fitness(neutral, [Head|Tail], M, Acum) ->
+cycle_population_fitness(<<"neutral">>, [Head|Tail], M, Acum) ->
   Fitness = 1.0,
-  cycle_population_fitness(neutral, Tail, M, [Head#asim_player{fitness = Fitness}| Acum]);
+  cycle_population_fitness(<<"neutral">>, Tail, M, [Head#asim_player{fitness = Fitness}| Acum]);
 
 %% Iteration end
 cycle_population_fitness(_FitnessFunction, [], _M, Acum) -> Acum.
@@ -98,7 +98,9 @@ cycle_population_fitness(_FitnessFunction, [], _M, Acum) -> Acum.
 
 cycle_population_fitness_order(Population) ->
   SortFun = fun(Player1, Player2) -> Player1#asim_player.fitness > Player2#asim_player.fitness end,
-  lists:sort(SortFun, Population).
+  SortedList = lists:sort(SortFun, Population),
+  %%io:format("~n~n~p", [SortedList]),
+  SortedList.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% cycle_create_new_population
@@ -115,7 +117,7 @@ cycle_create_new_population(PopulationCount, SelectionCount, Population, GenomeS
   Parent1 = lists:nth(Parent1Index, Population),
   Parent2 = lists:nth(Parent2Index, Population),
   Child = player_mate(Parent1, Parent2, GenomeSize),
-  cycle_create_new_population(PopulationCount - 1, SelectionCount, Population, [Child | Acum]);
+  cycle_create_new_population(PopulationCount - 1, SelectionCount, Population, GenomeSize, [Child | Acum]);
 cycle_create_new_population(_PopulationCount, _SelectionCount, _Population, _GenomeSize, Acum) ->
   Acum.
 
@@ -150,10 +152,10 @@ player_mate(#asim_player{
   %% Create the child genome
   ChildGenome = player_mate_genomes(Genome1, Genome2, GeneToMutate),
 
-  %% TODO: Lose capital in some random cases?
+  %% Lose capital?
   #asim_player{
     genome = ChildGenome,
-    capital = Capital1 + Capital2
+    capital = 0 %% Capital1 + Capital2
   }.
 
 %% The actual function that mate the players genomes

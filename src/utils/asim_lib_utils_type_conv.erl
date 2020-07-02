@@ -21,7 +21,7 @@
 %% Accepted parameter types are: list, binary, integer, float and atom.
 to_list(Any) when is_binary(Any) ->	binary_to_list(Any);
 to_list(Any) when is_integer(Any) -> integer_to_list(Any);
-to_list(Any) when is_float(Any) -> float_to_list(Any);
+to_list(Any) when is_float(Any) -> float_to_list(Any, [{decimals, 6}, compact]);
 to_list(Any) when is_atom(Any) -> atom_to_list(Any);
 to_list(Any) when is_list(Any) -> Any.
 
@@ -36,7 +36,7 @@ to_list_binaries([], Acum) -> lists:reverse(Acum).
 %% @doc Convert most Erlang types to binary.
 %% Accepted parameter types are: list, binary, integer, float and atom.
 to_binary(Any) when is_integer(Any) -> list_to_binary(integer_to_list(Any));
-to_binary(Any) when is_float(Any) -> float_to_binary(Any);
+to_binary(Any) when is_float(Any) -> float_to_binary(Any, [{decimals, 6}, compact]);
 to_binary(Any) when is_atom(Any) -> atom_to_binary(Any,utf8);
 to_binary(Any) when is_list(Any) -> list_to_binary(Any);
 to_binary(Any) when is_binary(Any) -> Any.

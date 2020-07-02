@@ -46,6 +46,13 @@ to_html(Key, Value, Row) when erlang:is_binary(Value) ->
 %% handle list
 %%=============================================
 
+%% Population list
+to_html(<<"population">>, Value, Row) when erlang:is_list(Value) ->
+
+	BinaryValue = asim_lib_utils_type_conv:to_binary(io_lib:format("~tp",[Value])),
+	erlang:iolist_to_binary([<<"<div>">>,
+		asim_lib_web_htmlentities:encode(asim_lib_utils_binaries:part_from_begining(BinaryValue, 128)), <<"...</div>">>]);
+
 %% List
 to_html(Key, Value, Row) when erlang:is_list(Value) ->
 
@@ -84,15 +91,9 @@ to_html(_Key, Value, _Row) ->
 %% binary_value_to_html
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-binary_value_to_html(<<"tank_id">>, Value, _Row) ->
+binary_value_to_html(<<"link_id">>, Value, _Row) ->
 
-    Url = asim_lib_web_url:get(<<"tanks">>, <<"update">>, <<"default">>, [{<<"tank_id">>, Value}]),
-    erlang:iolist_to_binary([<<"<a href=\"">>, Url, <<"\">">>,
-	    asim_lib_web_htmlentities:encode(asim_lib_utils_binaries:part_from_begining(Value, 16)), <<"...</a>">>]);
-
-binary_value_to_html(<<"map_id">>, Value, _Row) ->
-
-    Url = asim_lib_web_url:get(<<"maps">>, <<"update">>, <<"default">>, [{<<"map_id">>, Value}]),
+    Url = asim_lib_web_url:get(<<"link_id">>, <<"update">>, <<"default">>, [{<<"link_id">>, Value}]),
     erlang:iolist_to_binary([<<"<a href=\"">>, Url, <<"\">">>,
 	    asim_lib_web_htmlentities:encode(asim_lib_utils_binaries:part_from_begining(Value, 16)), <<"...</a>">>]);
 
@@ -117,8 +118,7 @@ binary_value_to_html(<<"ip">>, Value, _Row) ->
                                 <<"</div>">>
                             ]);
 
-binary_value_to_html(_Key, Value, _Row) ->
-
+binary_value_to_html(Key, Value, _Row) ->
     asim_lib_web_htmlentities:encode(Value).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -37,7 +37,7 @@ init([]) ->
 	State = #asim_simulation{},
 
 	%% Seed the number generator
-	rand:seed(exsss, {asim_lib_utils_time:microseconds(), asim_lib_utils_time:seconds(), asim_lib_db_ets:get_node_counter()}),
+	rand:seed(exs1024s, {asim_lib_utils_time:microseconds(), asim_lib_utils_time:seconds(), asim_lib_db_ets:get_node_counter()}),
 
 	{ok, State, infinity}.
 
@@ -146,7 +146,15 @@ simulation_loop(State = #asim_simulation{
 	},
 
 	%% Insert the simulation cycle into the database
-	mnesia:dirty_write(asim_simulation_history, EndCycleState),
+	mnesia:dirty_write(asim_simulation_history, #asim_simulation_history{
+		id = EndCycleState#asim_simulation.id,
+		cycle = EndCycleState#asim_simulation.cycle,
+		population = EndCycleState#asim_simulation.population,
+		max_player_taxes = EndCycleState#asim_simulation.max_player_taxes,
+		g_energy_produced = EndCycleState#asim_simulation.g_energy_produced,
+		b_taxes_collected = EndCycleState#asim_simulation.b_taxes_collected,
+		time_created = asim_lib_utils_time:milliseconds()
+	}),
 
 	%% Check for simulation termination condition
 	case erlang:is_integer(StopCycle) of
@@ -251,7 +259,7 @@ cycle_redistribute_taxes(State = #asim_simulation{
 
 			cycle_redistribute_taxes_meritocracy(Population, CCostOfTheSimulation, BTaxesCollected, []);
 
-		from_ability_to_needs ->
+		_ ->
 
 			EqualValue = (GEnergyProduced - (GEnergyProduced * CCostOfTheSimulation)) / PopulationCount,
 			cycle_redistribute_taxes_meritocracy_fatn(Population, EqualValue, [])
@@ -289,7 +297,7 @@ cycle_energy_production(State = #asim_simulation{
 	}.
 
 %% Cycle through each member of the population
-cycle_energy_production([Player = #asim_player{capital = Capital}|TPopulation],
+cycle_energy_production([Player = #asim_player{capital = Capital, genome = Genome}|TPopulation],
 		Rules = #asim_simulation_rules{
 			m_gene_miner_energy = MGeneMinerEnergy,
 			t_gene_trader_energy = TGeneTraderEnergy,
@@ -298,10 +306,17 @@ cycle_energy_production([Player = #asim_player{capital = Capital}|TPopulation],
 			z_gene_thief_ability = ZGeneThiefAbility
 		}, GEnergyProduced, NewPopulation) ->
 
-	{_G0, G1, G2, G3, G4, G5} = cycle_energy_production_count_genes(Player),
+	{_G0, G1, G2, G3, _G4, G5} = cycle_energy_production_count_genes(Genome),
 
 	%% The Capital at the beginning of the cycle formula
-	Cb = Capital - (Capital * G5 * HGeneHoarderAbility),
+	MaybeZeroCb = Capital - (Capital * G5 * HGeneHoarderAbility),
+
+	%% Player may start with 0 capital, handle this situation here
+	Cb = case MaybeZeroCb < 1 of
+					true -> 1;
+					_ -> MaybeZeroCb
+	            end,
+
 
 	%% Compute the remaining capital
 	PlayerRemainingCapital = Capital - Cb,
@@ -362,39 +377,48 @@ cycle_pay_taxes(State = #asim_simulation{
 	}
 }) ->
 
-	{NewBTaxesCollected, NewPopulation} = case ProfitRedistributionType of
+	{NewBTaxesCollected, MaxPlayerTaxes, NewPopulation} = case ProfitRedistributionType of
 
-																					<<"meritocracy">> ->
+		                                      <<"meritocracy">> ->
 
-			cycle_pay_taxes_meritocracy(Population, CCostOfTheSimulation, XTaxationPercent, []);
+			                                      cycle_pay_taxes_meritocracy(Population, CCostOfTheSimulation, XTaxationPercent, 0, 0, []);
 
-		from_ability_to_needs ->
+		                                      _ ->
 
-			cycle_pay_taxes_meritocracy_fatn(Population, 0, [])
+			                                      cycle_pay_taxes_meritocracy_fatn(Population, 0, 0, [])
 
-	end,
+	                                      end,
 
-	State#asim_simulation{b_taxes_collected = NewBTaxesCollected, population = NewPopulation}.
+	State#asim_simulation{b_taxes_collected = NewBTaxesCollected, max_player_taxes = MaxPlayerTaxes, population = NewPopulation}.
 
 %% Pay taxes using meritocracy
 cycle_pay_taxes_meritocracy([Player = #asim_player{
 	capital = Capital,
 	production = EProduction
 }|T],
-		CCostOfTheSimulation, XTaxationPercent, Acum) ->
+	CCostOfTheSimulation, XTaxationPercent, BTaxesCollected, MaxPlayerTaxes, Acum) ->
 
 	EProductionCosts = EProduction - EProduction * CCostOfTheSimulation,
 	TPayedTaxes = EProductionCosts * XTaxationPercent,
 	NewCapital = Capital + EProductionCosts - TPayedTaxes,
 	NewPlayer = Player#asim_player{capital = NewCapital, taxes = TPayedTaxes},
-	cycle_pay_taxes_meritocracy(T, CCostOfTheSimulation, XTaxationPercent, [NewPlayer | Acum]);
-cycle_pay_taxes_meritocracy([], _CCostOfTheSimulation, _XTaxationPercent, Acum) -> Acum.
+	NewBTaxesCollected = BTaxesCollected + TPayedTaxes,
+	NewMaxPlayerTaxes = case MaxPlayerTaxes < TPayedTaxes of
+							true -> TPayedTaxes;
+							_ -> MaxPlayerTaxes
+	                    end,
+	cycle_pay_taxes_meritocracy(T, CCostOfTheSimulation, XTaxationPercent, NewBTaxesCollected, NewMaxPlayerTaxes, [NewPlayer | Acum]);
+cycle_pay_taxes_meritocracy([], _CCostOfTheSimulation, _XTaxationPercent, BTaxesCollected, MaxPlayerTaxes, Acum) -> {BTaxesCollected, MaxPlayerTaxes, Acum}.
 
 %% Pay taxes using from_ability_to_needs
 cycle_pay_taxes_meritocracy_fatn([Player = #asim_player{production = EProduction}|T],
-		BTaxesCollected, Acum) ->
+	BTaxesCollected, MaxPlayerTaxes, Acum) ->
 	NewBTaxesCollected = BTaxesCollected + EProduction,
 	NewPlayer = Player#asim_player{taxes = EProduction},
-	cycle_pay_taxes_meritocracy_fatn(T, NewBTaxesCollected, [NewPlayer | Acum]);
-cycle_pay_taxes_meritocracy_fatn([], BTaxesCollected, Acum) -> {BTaxesCollected, Acum}.
+	NewMaxPlayerTaxes = case MaxPlayerTaxes < EProduction of
+		                    true -> EProduction;
+		                    _ -> MaxPlayerTaxes
+	                    end,
+	cycle_pay_taxes_meritocracy_fatn(T, NewBTaxesCollected, NewMaxPlayerTaxes, [NewPlayer | Acum]);
+cycle_pay_taxes_meritocracy_fatn([], BTaxesCollected, MaxPlayerTaxes, Acum) -> {BTaxesCollected, MaxPlayerTaxes, Acum}.
 
