@@ -1,0 +1,79 @@
+$story$
+
+<h1>$simulation_name$</h1>
+<h2>$simulation_id$</h2>
+<div class="charts-wrapper">
+    <canvas id="chart-0"></canvas>
+</div>
+<div id="chart-analyser" class="analyser"></div>
+<script language="JavaScript" type="text/javascript">
+	function transparentize(color, opacity) {
+	var alpha = opacity === undefined ? 0.5 : 1 - opacity;
+	return Color(color).alpha(alpha).rgbString();
+	};
+	var presets = {
+	red: 'rgb(255, 99, 132)',
+	orange: 'rgb(255, 159, 64)',
+	yellow: 'rgb(255, 205, 86)',
+	green: 'rgb(75, 192, 192)',
+	blue: 'rgb(54, 162, 235)',
+	purple: 'rgb(153, 102, 255)',
+	grey: 'rgb(201, 203, 207)'
+	};
+	var data = {
+	labels: [$cycles_labels$],
+	datasets: [
+	{
+	backgroundColor: transparentize(presets.orange),
+	borderColor: presets.orange,
+	data: [$max_player_taxes$],
+	label: 'Maximum taxes paid by a single player',
+	fill: -1
+	},
+	{
+	backgroundColor: transparentize(presets.green),
+	borderColor: presets.green,
+	data: [$g_energy_produced$],
+	label: 'Energy production per cycle (G)',
+	fill: -1
+	},
+	{
+	backgroundColor: transparentize(presets.blue),
+	borderColor: presets.blue,
+	data: [$b_taxes_collected$],
+	label: 'Total taxes collected per cycle (B)',
+	fill: -1
+	}]
+	};
+
+	var options = {
+	maintainAspectRatio: false,
+	spanGaps: false,
+	elements: {
+	line: {
+	tension: 0.000001
+	}
+	},
+	scales: {
+	yAxes: [{
+	stacked: false
+	}]
+	},
+	plugins: {
+	filler: {
+	propagate: false
+	},
+	'samples-filler-analyser': {
+	target: 'chart-analyser'
+	}
+	}
+	};
+
+	var chart0 = new Chart('chart-0', {
+	type: 'line',
+	data: data,
+	options: options
+	});
+
+</script>
+
